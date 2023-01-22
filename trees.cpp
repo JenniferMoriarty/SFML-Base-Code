@@ -1,26 +1,26 @@
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp> //bring in library
 
 
-int main()
+int main() //starting point of all C++ programs
 {
 	sf::RenderWindow window(sf::VideoMode(800, 800), "Trees"); //set up screen
-	sf::CircleShape circle;
-	sf::RectangleShape rect;
+	sf::CircleShape circle; //tell the program we're using this shape
+	sf::RectangleShape rect; //this one too!
 
 
 
 	while (window.isOpen())//GAME LOOP--------------------------------
 	{
-		sf::Event event;
+		sf::Event event; //look for keyboard/mouse/etc clicks
 		while (window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
+			if (event.type == sf::Event::Closed) //check if player has closed window with top left 'x' button
 				window.close();
 
 		}
 
 		//render section-------------------------------
-		window.clear();
+		window.clear(); //wipe screen (needed more for animations)
 
 		//left branch
 		circle.setRadius(30);
@@ -46,11 +46,11 @@ int main()
 		rect.setSize(sf::Vector2f(20, 100));
 		window.draw(rect);
 
-		window.display(); //flip the buffer
+		window.display(); //flip the buffer (memory) to the screen
 
 	}//end game loop-------------------------------------------------
 
 
 
-	return 0;
+	return 0; //tell the operating system we finished the program successfully 
 } //end main
